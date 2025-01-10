@@ -1,6 +1,7 @@
 ---
 title: Require
 actions: ['checkAnswer', 'hints']
+requireLogin: true
 material:
   editor:
     language: sol
@@ -91,7 +92,7 @@ Vamos a hacer que un jugador solo pueda llamar a esta función una vez. De esta 
 
 ¿Cómo podemos hacer para que esta función solo pueda ser llamada una vez por jugador?
 
-Para eso usamos `require`. `require` hace que la función lanze un error y pare de ejecutarse si la condición no es verdadera:
+Para eso usamos `require`. `require` hace que la función lance un error y pare de ejecutarse si la condición no es verdadera:
 
 ```
 function sayHiToVitalik(string _name) public returns (string) {
@@ -114,6 +115,6 @@ En nuestro juego de zombis, no queremos que un usuario pueda crear zombis ilimit
 
 Vamos a usar `require` para asegurarnos que esta función solo pueda ser ejecutada una vez por usuario, cuando vayan a crear a su primer zombi.
 
-1. Coloca una sentencia `require` al principio de la función `createRandomZombie`. La función debería comprobar que `ownerZombieCount[msg.sender]` sea igual a `0`, y si no que lanze un error.
+1. Coloca una sentencia `require` al principio de la función `createRandomZombie`. La función debería comprobar que `ownerZombieCount[msg.sender]` sea igual a `0`, y si no que lance un error.
 
 > Nota: En Solidity, no importa que termino pongamos primero - ambos son equivalentes. De todas formas, como nuestro corrector de respuestas es bastante básico, solo aceptamos una respuesta correcta - esta espera que `ownerZombieCount[msg.sender]` vaya primero.

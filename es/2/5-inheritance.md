@@ -1,6 +1,7 @@
 ---
 title: Herencia
 actions: ['checkAnswer', 'hints']
+requireLogin: true
 material:
   editor:
     language: sol
@@ -93,7 +94,7 @@ material:
 
 ---
 
-Nuestro código está haciendose un poco largo. Mejor que hacer un contrato extremandamente largo, a veces tiene sentido separar la lógica de nuestro código en multiples contratos para organizar el código.
+Nuestro código está haciéndose un poco largo. Mejor que hacer un contrato extremandamente largo, a veces tiene sentido separar la lógica de nuestro código en múltiples contratos para organizar el código.
 
 Una característica de Solidity que hace más manejable esto es la **_herencia_** de los contratos:
 
@@ -112,7 +113,7 @@ contract BabyDoge is Doge {
 ```
 
 `BabyDoge` **_hereda_** de `Doge`. Eso significa que si compilas y ejecutas `BabyDoge`, este tendrá acceso tanto a `catchphrase()` como a `anotherCatchphrase()` (y a cualquier otra función publica que definamos en `Doge`).
- 
+
 Esto puede usarse como una herencia lógica (como una subclase, un `Gato` es un `Animal`). Pero también puede usarse simplemente para organizar tu código agrupando lógica similar en diferentes clases.
 
 # Vamos a probarlo

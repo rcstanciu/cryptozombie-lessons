@@ -7,7 +7,7 @@ material:
     language: sol
     startingCode:
       "zombieownership.sol": |
-        pragma solidity ^0.4.19;
+        pragma solidity ^0.4.25;
 
         import "./zombieattack.sol";
         import "./erc721.sol";
@@ -399,7 +399,7 @@ material:
         }
 
         function transferFrom(address _from, address _to, uint256 _tokenId) external payable {
-          require (zombieToOwner[_tokenId] == msg.sender || zombieApprovals [_tokenId] == msg.sender);
+          require (zombieToOwner[_tokenId] == msg.sender || zombieApprovals[_tokenId] == msg.sender);
           _transfer(_from, _to, _tokenId);
         }
 
@@ -489,7 +489,7 @@ Deberíamos poner:
 myUint = myUint.add(1);
 ```
 
-## Póngalo a prueba
+## Vamos a probarlo
 
 Tenemos dos sitios en `ZombieOwnership` donde se hacen operaciones matemáticas. Vamos a sustituirlos por los métodos que proporciona SafeMath.
 
